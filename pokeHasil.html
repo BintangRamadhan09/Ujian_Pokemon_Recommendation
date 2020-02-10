@@ -1,72 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Result</title>
-</head>
-<body>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Cari Pokemon Favorit</title>
     <style>
-        body {
-            background : url(https://images3.alphacoders.com/695/695497.png);
-            background-size : 1280px 720px
+    body {
+        background-color: white;
         }
     </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
     <center>
-        <h1>Pokemon Favorit Anda</h1>
-    </center>
-        <h3>{{data1}}</h3>
-        <img src="{{data5}}" width="50" height="50">
-        <h3>{{data2}} {{data3}} {{data4}}</h3>
-        <br>
-    <center>
-        <h1>Rekomendasi Digimon</h1>
-    </center>
-    <div class="row">
-        <div class="input-field col s3">
-        <h5>{{digi2}}</h5>
-        <br>
-        <img src="{{gambar2}}" width="50" height="50">
-        <br>
-        <h5>{{stage2}} {{type2}} {{attribute2}}</h5>
-        </div>
-        <div class="input-field col s3">
-        <h5>{{digi3}}</h5>
-        <img src="{{gambar3}}" width="50" height="50">
-        <h5>{{stage3}} {{type3}} {{attribute3}}</h5>
-        </div>
-        <div class="input-field col s3">
-        <h5>{{digi4}}</h5>
-        <img src="{{gambar4}}" width="50" height="50">
-        <h5>{{stage4}} {{type4}} {{attribute4}}</h5>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s3">
-        <h3>{{digi5}}</h3>
-        <img src="{{gambar5}}" width="50" height="50">
-        <h3>{{stage5}} {{type5}} {{attribute5}}</h3>
-        </div>
-        <div class="input-field col s3">
-        <h3>{{digi6}}</h3>
-        <img src="{{gambar6}}" width="50" height="50">
-        <h3>{{stage6}} {{type6}} {{attribute6}}</h3>
-        </div>
-        <div class="input-field col s3">
-        <h3>{{digi7}}</h3>
-        <img src="{{gambar7}}" width="50" height="50">
-        <h3>{{stage7}} {{type7}} {{attribute7}}</h3>
-        </div>
-        <br>
-    </div>
-    <br>
-    <center>
-    <a href="http://127.0.0.1:5000/">
-        <button type="button" class="btn btn-danger">Kembali</button>
-    </a>
-    </center>
-    
+    <h2>Pokemon Favoritmu</h2>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{favorit['#']}}.png" alt="gambar poke"><br>
+    Nama : {{favorit['Name'].capitalize()}} <br>
+    Type : {{favorit['Type 1']}} | Gen {{favorit['Generation']}} | Legendary : {{favorit['Legendary']}}<br>
+    <h2>Rekomendasi Pokemon dari kami</h2>
+    <ul>
+        {% for item in rekomen %}
+        <img src="{{item['gambar']}}" alt="gambar poke"><br>
+        <h4>Nama : {{ item['Name'] }}</h4><br>
+        Type : {{ item['Type'] }} | Gen {{ item['Generation'] }} | Legendary : {{ item['Legend'] }} <br>
+        {% endfor %}
+    </ul>
+    <form action="http://localhost:5000/">
+        <button type="submit">Kembali</button>
+    </form>
+</center>
+
 </body>
-</html>
+</html
