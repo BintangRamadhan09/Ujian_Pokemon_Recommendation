@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon Recommendation</title>
+</head>
+<body>
+    <style>
+    body {
+        background-color: cyan;
+       }
+    </style>
+</head>
+
+<body>
+    <center><br>
+        <br>
+        <br><br>
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/pokemon1.jpg" alt="">
+    <h1>Masukkan Nama Pokemon yang kamu sukai</h1>
+    <hr>
+    <form method='POST' action='http://localhost:5000/hasil'>
+        <input type='text' name='pokemon' placeholder="Pokemon favoritku"/>
+        <input type='submit' value='Cari Pokemon'/>
+    </form>
+    </center>
+    
+</body>
+</html>
